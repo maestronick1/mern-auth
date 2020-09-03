@@ -17,3 +17,5 @@ db.once('open',()=>{
 db.on('error', (error)=>{
     console.log(`Database error\n${error}`)
 })
+
+module.exports.User = require('./User')
