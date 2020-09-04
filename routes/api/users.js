@@ -80,3 +80,12 @@ router.post('/login', (req, res) => {
         }
     })
 });
+
+router.get('/current', passport.authenticate('jwt', {session: false}), (req,res)=>{
+    res.json({
+        id: user.id,
+        name: user.name,
+       email: user.email
+    })
+})
+module.exports = router;
